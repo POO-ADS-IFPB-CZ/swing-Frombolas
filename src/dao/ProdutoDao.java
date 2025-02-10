@@ -29,6 +29,7 @@ public class ProdutoDao {
                     new FileOutputStream(arquivo))) {
                 out.writeObject(produtos);
             }
+            return true;
         }
         return false;
     }
@@ -48,6 +49,7 @@ public class ProdutoDao {
         Set<Produto> produtos = getProdutos();
         if(produtos.remove(produto)){
             atualizarArquivo(produtos);
+            return true;
         }
         return false;
     }
